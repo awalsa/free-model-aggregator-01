@@ -1,0 +1,1 @@
+{"description":"One server, two client wires (OpenAI + Anthropic), rating-first routing with failover over ten simulated free providers. Entry for the make.fun bounty free-model-aggregator-01.","name":"free-model-aggregator-01","private":true,"type":"module"}
