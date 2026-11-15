@@ -1,7 +1,22 @@
-# free-model-aggregator-01 — entry server
+# free-model-aggregator-01
 
-One server, two client wires (OpenAI Chat Completions + Anthropic Messages, JSON and SSE),
-rating-first routing with failover over the trial's ten simulated free providers.
+[![make.fun · free-model-aggregator-01](https://make.fun/badge/free-model-aggregator-01.svg)](https://make.fun/bounty/free-model-aggregator-01?utm_source=github&utm_medium=readme&utm_campaign=free-model-aggregator-01)
+[![rank](https://make.fun/badge/free-model-aggregator-01/awalsa/free-model-aggregator-01/rank.svg)](https://make.fun/bounty/free-model-aggregator-01/leaderboard?utm_source=github&utm_medium=readme&utm_campaign=free-model-aggregator-01)
+[![reward](https://make.fun/badge/free-model-aggregator-01/awalsa/free-model-aggregator-01/reward.svg)](https://make.fun/bounty/free-model-aggregator-01?utm_source=github&utm_medium=readme&utm_campaign=free-model-aggregator-01)
+
+One server, two client wires (OpenAI Chat Completions + Anthropic Messages, JSON and SSE), rating-first routing with failover over the trial's ten simulated free providers.
+
+## Run it
+
+```sh
+node main.ts
+```
+
+Run from this directory with `MAKEFUN_PROMPT_FILE` and `MAKEFUN_ENV_URL` set. Also `node main.ts --list` (prints the catalog, exits 0).
+
+---
+
+<sub>Entered on [make.fun](https://make.fun/?ref=ctxyjecw&utm_source=github&utm_medium=readme&utm_campaign=free-model-aggregator-01) · AI agents build software for cash rewards</sub>
 
 ## Layout
 
@@ -15,8 +30,7 @@ rating-first routing with failover over the trial's ten simulated free providers
 - `package.json` — `{"type": "module"}` so Node runs the `.ts` entrypoint without a warning.
 - `LICENSE` — MIT (the starter's).
 
-Node 22 standard library only; nothing is installed. Run from this directory as
-`node main.ts` with `MAKEFUN_PROMPT_FILE` and `MAKEFUN_ENV_URL` set.
+Node 22 standard library only; nothing is installed.
 
 ## How it routes
 
@@ -70,14 +84,3 @@ Quality 99 is the ceiling, not a miss: a 100 needs all 20 requests at their best
 budget is 10–12 — the other 5+ must fall back to 1470/1465, which costs at least 25 milli
 against the bound. The final scored instances are drawn from a later drand round, so the exact
 draw will differ, but the routing adapts to whatever it is.
-
-## What remains (for the parent, before Mon 16 Nov 09:30 WIB)
-
-1. **Public GitHub repo** — created after the competition opened (2026-11-14T02:30:00Z), OSI
-   license (MIT is in here), `.makefun/owner.json` with a wallet linked to @zkawala unless the
-   repo owner is the account's GitHub login. NOTE: this repo was built in this session (started
-   after the opening), but the transcript gate counts only code the uploaded agent sessions
-   wrote — bundle the sessions that built it.
-2. **Check** — `node cli/makefun.mjs check --kit . --repo <repo> --transcripts transcripts.tar.gz`.
-3. **Submit** — with the make.fun keypair (the entry is signed by the Solana wallet linked to
-   @zkawala). This build used no keypair, no secrets, no submission.
